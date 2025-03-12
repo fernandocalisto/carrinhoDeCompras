@@ -1,9 +1,10 @@
 let total = 0;
+let carrinho = document.getElementById('lista-produtos').children[0];
+let valorTotal = document.getElementById('valor-total');
 function adicionar(){
     let produto = document.getElementById('produto').value;
     let quantidade = document.getElementById('quantidade').value;
-    let carrinho = document.getElementById('lista-produtos').children[0];
-    let valorTotal = document.getElementById('valor-total');
+
     if (!quantidade){
         quantidade = 1;
     }
@@ -34,4 +35,10 @@ function nomeProduto(produto,quantidade){
     else{
         return `<br><span class="texto-azul">${quantidade}x</span> Oculus VR <span class="texto-azul">R$${5000*quantidade}</span>`;
     }
+}
+
+function limpar(){
+    total = 0;
+    valorTotal.textContent = 'R$0';
+    carrinho.innerHTML = '';
 }
